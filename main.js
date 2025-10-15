@@ -32,8 +32,7 @@ let tabTrainCar = document.getElementById('table-train-car')
 let tabCode = document.getElementById('table-code')
 
 const select = document.getElementById("age");
-const valore = select.value;
-console.log(valore);
+
 
 
 form.addEventListener('submit', (event) => {
@@ -41,6 +40,8 @@ form.addEventListener('submit', (event) => {
     //console.log(`${name_field.value} ${distance_field.value}`);
     tabName.append(name_field.value)
 
+    const valore = select.value;
+    //console.log(valore);
     if (valore === 'maggiorenne') {
         tabDeal.append('Biglietto standard')
     } else {
@@ -59,5 +60,11 @@ form.addEventListener('submit', (event) => {
     }
     //console.log(codiceCP.join(''));
     tabCode.append(codiceCP.join(''))
+
+    /*
+    il prezzo del biglietto è definito in base ai km (0.21 € al km)
+    va applicato uno sconto del 20% per i minorenni
+    a applicato uno sconto del 40% per gli over 65.
+    */
 
 })
