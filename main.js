@@ -26,8 +26,11 @@ const form = document.querySelector('form')
 const name_field = document.getElementById('name-field')
 const distance_field = document.getElementById('distance-field')
 
+let tabName = document.getElementById('table-name')
+
 form.addEventListener('submit', (event)=>{
     event.preventDefault()
-    console.log(`${name_field.value} ${distance_field.value}`);
+    //console.log(`${name_field.value} ${distance_field.value}`);
+    tabName.append(name_field.value)
     
 })
