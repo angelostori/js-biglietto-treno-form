@@ -39,19 +39,20 @@ const select = document.getElementById("age");
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     //console.log(`${name_field.value} ${distance_field.value}`);
-    tabName.append(name_field.value)
+    //tabName.append(name_field.value)
+    tabName.innerHTML = name_field.value
 
     const valore = select.value;
     //console.log(valore);
     if (valore === 'maggiorenne') {
-        tabDeal.append('Biglietto standard')
+        tabDeal.innerHTML = 'Biglietto standard'
     } else {
-        tabDeal.append('Biglietto ridotto')
+        tabDeal.innerHTML = 'Biglietto ridotto'
     }
 
     const numeroCarrozza = Math.floor(Math.random() * 10) + 1;
     //console.log(numeroCarrozza);
-    tabTrainCar.append(numeroCarrozza)
+    tabTrainCar.innerHTML = numeroCarrozza
 
     const codiceCP = []
 
@@ -60,7 +61,7 @@ form.addEventListener('submit', (event) => {
         codiceCP.push(numeroCasuale)
     }
     //console.log(codiceCP.join(''));
-    tabCode.append(codiceCP.join(''))
+    tabCode.innerHTML = codiceCP.join('')
 
     /*
     il prezzo del biglietto è definito in base ai km (0.21 € al km)
@@ -76,12 +77,12 @@ form.addEventListener('submit', (event) => {
     if (valore === 'minorenne') {
         discount = price * 0.2
         price -= discount
-        tabPrice.append(price.toFixed(2))
+        tabPrice.innerHTML = price.toFixed(2)
     } else if (valore === 'anziano') {
         discount = price * 0.4
         price -= discount
-        tabPrice.append(price.toFixed(2))
+        tabPrice.innerHTML = price.toFixed(2)
     } else {
-        tabPrice.append(price.toFixed(2))
+        tabPrice.innerHTML = price.toFixed(2)
     }
 })
