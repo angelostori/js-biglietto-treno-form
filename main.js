@@ -20,3 +20,14 @@ Se non vi sentite particolarmente creativi, questa potrebbe essere un’implemen
 seguire per il secondo milestone. Potete scegliere di implementare una soluzione 
 completamente diversa oppure simile, ma in ogni caso cercate di farla vostra.
 */
+
+const form = document.querySelector('form')
+
+const name_field = document.getElementById('name-field')
+const distance_field = document.getElementById('distance-field')
+
+form.addEventListener('submit', (event)=>{
+    event.preventDefault()
+    console.log(`${name_field.value} ${distance_field.value}`);
+    
+})
