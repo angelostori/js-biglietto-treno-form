@@ -27,10 +27,37 @@ const name_field = document.getElementById('name-field')
 const distance_field = document.getElementById('distance-field')
 
 let tabName = document.getElementById('table-name')
+let tabDeal = document.getElementById('table-deal')
+let tabTrainCar = document.getElementById('table-train-car')
+let tabCode = document.getElementById('table-code')
 
-form.addEventListener('submit', (event)=>{
+const select = document.getElementById("age");
+const valore = select.value;
+console.log(valore);
+
+
+form.addEventListener('submit', (event) => {
     event.preventDefault()
     //console.log(`${name_field.value} ${distance_field.value}`);
     tabName.append(name_field.value)
-    
+
+    if (valore === 'maggiorenne') {
+        tabDeal.append('Biglietto standard')
+    } else {
+        tabDeal.append('Biglietto ridotto')
+    }
+
+    const numeroCarrozza = Math.floor(Math.random() * 10) + 1;
+    //console.log(numeroCarrozza);
+    tabTrainCar.append(numeroCarrozza)
+
+    const codiceCP = []
+
+    for (let i = 0; i < 4; i++) {
+        const numeroCasuale = Math.floor(Math.random() * 9);
+        codiceCP.push(numeroCasuale)
+    }
+    //console.log(codiceCP.join(''));
+    tabCode.append(codiceCP.join(''))
+
 })
