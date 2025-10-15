@@ -9,14 +9,52 @@
 
 <body>
 
+    <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
     <form>
         <h3>Nome Cognome</h3>
         <input type="text" id="name-field" placeholder="Inserisci nome completo" />
+
         <h3>Km da percorrere</h3>
         <input type="text" id="distance-field" placeholder="Inserisci i Km" />
 
+        <h3>Fascia di età</h3>
+        <select id="age">
+            <option value="maggiorenne">Maggiorenne</option>
+            <option value="minorenne">Minorenne</option>
+        </select>
+
         <button type="submit">Genera</button>
+        <button type="reset">Annulla</button>
     </form>
+
+    <h2>IL TUO BIGLIETTO</h2>
+    <section class="card">
+        <h3>DETTAGLIO PASSEGERO</h3>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <h3>NOME PASSEGERO</h3>
+                        </th>
+                        <th>Offera</th>
+                        <th>Carrozza</th>
+                        <th>Codice CP</th>
+                        <th>Costo biglietto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="table-name"></td>
+                        <td id="table-deal"></td>
+                        <td id="table-train-car"></td>
+                        <td id="table-code"></td>
+                        <td id="table-price"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
     <script src="./main.js"></script>
 </body>
