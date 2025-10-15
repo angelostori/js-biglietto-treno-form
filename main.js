@@ -67,12 +67,21 @@ form.addEventListener('submit', (event) => {
     va applicato uno sconto del 20% per i minorenni
     a applicato uno sconto del 40% per gli over 65.
     */
-    const price = parseFloat(distance_field.value * 0.21)
+    let price = distance_field.value * 0.21
     //console.log(distance_field.value);
-    
-    tabPrice.append(price.toFixed(2))
+
+    //tabPrice.append(price)
+    let discount = 0;
 
     if (valore === 'minorenne') {
-        
+        discount = price * 0.2
+        price -= discount
+        tabPrice.append(price.toFixed(2))
+    } else if (valore === 'anziano') {
+        discount = price * 0.4
+        price -= discount
+        tabPrice.append(price.toFixed(2))
+    } else {
+        tabPrice.append(price.toFixed(2))
     }
 })
