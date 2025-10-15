@@ -30,6 +30,7 @@ let tabName = document.getElementById('table-name')
 let tabDeal = document.getElementById('table-deal')
 let tabTrainCar = document.getElementById('table-train-car')
 let tabCode = document.getElementById('table-code')
+let tabPrice = document.getElementById('table-price')
 
 const select = document.getElementById("age");
 
@@ -66,5 +67,12 @@ form.addEventListener('submit', (event) => {
     va applicato uno sconto del 20% per i minorenni
     a applicato uno sconto del 40% per gli over 65.
     */
+    const price = parseFloat(distance_field.value * 0.21)
+    //console.log(distance_field.value);
+    
+    tabPrice.append(price.toFixed(2))
 
+    if (valore === 'minorenne') {
+        
+    }
 })
